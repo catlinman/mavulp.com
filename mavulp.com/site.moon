@@ -16,8 +16,14 @@ sitegen.create =>
   build lessc, "less/style.less", "css/style.css"
   build coffeescript, "coffee/main.coffee", "js/main.js"
 
-  -- Add pages that should be built.
+  -- The following pages are for basic access and management.
   add "pages/index.md", target: "index"
+  add "pages/403.md"
+  add "pages/404.md"
+  add "pages/500.md"
+
+  -- Custom pages added during development.
+  add "pages/test.md"
 
   -- Define variables for pages and templates here.
   @version = "0.1"

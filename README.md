@@ -25,6 +25,8 @@ This will make sure that files are updated and the page is rebuild as needed. Ch
 
 Sitegen will build the site in a new *www* directory in the given build root. This directory contains the deployment ready files. You'll have to take it from here on out. We recommend looking into [nginx](https://www.nginx.com/) for this purpose. The configuration files for the pages in this repository can be found in the *nginx* directory.
 
+Additionally pages have a script for deployment in their root directory called *deploy.sh*. This file sets up required paths, builds the given site using sitegen, moves the file to the public server directory and removes any files leftover from sitegen assuring that the work environment is kept clean. This file is mainly a helper. You should look into it before using it.
+
 ## License ##
 
 This repository is released under the MIT license. For more information please refer to [LICENSE](https://github.com/catlinman/mavulp.com/blob/master/LICENSE)
