@@ -6,6 +6,7 @@ printf "Created required directory structure.\n"
 printf "Running sitegen...\n"
 
 if sitegen ; then
+	cp -Rf img/ www/img || { printf "Failed copy image files to deployment directory.\n" ; exit; }
 	cp -Rf www/* /var/www/mavulp.com/public || { printf "Failed to copy files to the public server directory.\n" ; exit; }
 	printf "Copied built files to the public server directory.\n"
 

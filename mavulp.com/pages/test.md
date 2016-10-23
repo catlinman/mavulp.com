@@ -1,9 +1,14 @@
-# First heading
+
+# Test page #
+
+This next section contains the description variable that should be overwritten.
+
+## $description ##
 
 This is a page with test content.
 
-## This is the second heading
+### This is the third heading ###
 
-Look additional information
+Look additional information. We can also format things to look somewhat like code.
 
-    Will this be seen as code? I wonder.
+    $ sudo rm -rf /

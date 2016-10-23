@@ -6,7 +6,6 @@ server {
 
 	server_name mavulp.com www.mavulp.com dev.mavulp.com;
 	return 301 https://$server_name$request_uri;
-
 }
 
 # SSL server setup

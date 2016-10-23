@@ -18,14 +18,24 @@ sitegen.create =>
 
   -- The following pages are for basic access and management.
   add "pages/index.md", target: "index"
-  add "pages/403.md"
-  add "pages/404.md"
-  add "pages/500.md"
+  add "pages/403.md", target: "403"
+  add "pages/404.md", target: "404"
+  add "pages/500.md", target: "500"
 
   -- Custom pages added during development.
   add "pages/test.md"
 
-  -- Define variables for pages and templates here.
-  @version = "0.1"
+  -- Define variables for pages and templates here. Some of these should be
+  -- overwritten using the templating functions within input files.
+  @version = "0.2"
+
+  -- Page title. Subtitle is appended to the page title.
   @title = "Mavulp"
+  @subtitle = ""
+
+  -- Base URL used throughout the page for navigation as well as meta tagging.
   @url = "https://mavulp.com"
+
+  -- Variables for pages and input files. Should be overwritten in most cases.
+  @author = "Mavulp Development Team"
+  @description = "Mavulp is an international development team building websites and applications."
