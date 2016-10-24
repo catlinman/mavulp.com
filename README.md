@@ -11,7 +11,7 @@ The following sites are currently maintained in this repository.
 
 ## Setup ##
 
-Sites in this repository depend on [Sitegen](https://github.com/leafo/sitegen/) which is required to build the pages. Additionally [Less.js](http://lesscss.org/) and [CoffeeScript](http://coffeescript.org/) are used in development. Please make sure that these dependencies have been fulfilled before building.
+Sites in this repository depend on [Sitegen](https://github.com/leafo/sitegen/) which is required to build the pages. Additionally [Less.js](http://lesscss.org/), [CoffeeScript](http://coffeescript.org/) and [Pygments](http://pygments.org/) are used in development. Please make sure that these dependencies have been fulfilled before building.
 
 To build any of the sites in this repository, navigate to the given page root site directory and run the following command.
 

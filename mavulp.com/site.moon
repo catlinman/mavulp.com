@@ -16,6 +16,7 @@ sitegen.create =>
   -- Build stylesheets and scripts.
   build lessc, "less/style.less", "css/style.css"
   build coffeescript, "coffee/main.coffee", "js/main.js"
+  build coffeescript, "coffee/smoothscroll.coffee", "js/smoothscroll.js"
 
   -- The following pages are for basic access and management.
   add "pages/index.md", target: "index"
@@ -24,18 +25,22 @@ sitegen.create =>
   add "pages/500.md", target: "500", template: "error"
 
   -- Custom pages added during development.
-  add "pages/test.md", template: "page"
+  add "pages/site-launch.md", template: "page"
+  add "pages/formatting-guide.md", template: "page"
+  add "pages/terms-and-conditions.md", template: "page"
 
   -- Define variables for pages and templates here. Some of these should be
   -- overwritten using the templating functions within input files.
-  @version = "0.6"
-
-  -- Page title variable. Extends "Mavulp" on pages that are not index.
-  @title = "Mavulp"
+  @version = "0.8"
 
   -- Base URL used throughout the page for navigation as well as meta tagging.
   @url = "https://mavulp.com"
 
+  -- Page title variable. Extends "Mavulp" on pages that are not index.
+  @title = "Mavulp"
+
   -- Variables for pages and input files. Should be overwritten in most cases.
-  @author = "mavulp" -- Should be lowercase.
   @description = "Mavulp is an international development team building websites and applications."
+
+  @author = "mavulp" -- Page author. Should be lowercase.
+  @website = "https://mavulp.com" -- Author website.

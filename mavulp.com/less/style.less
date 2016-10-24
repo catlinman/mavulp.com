@@ -10,6 +10,13 @@
 @content-color: #1a1f30;
 @content-width: 800px;
 
+/* Helper class. Centers content and containers. Used mainly on the index page */
+
+.centered {
+	text-align-last: center !important;
+	-moz-text-align-last: center !important;
+}
+
 /* Helper class. Blurs an image. */
 
 .blur {
@@ -37,6 +44,13 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+
+	-webkit-user-drag: none;
+	-khtml-user-drag: none;
+	-moz-user-drag: none;
+	-o-user-drag: none;
+	user-drag: none;
+
 	cursor: default;
 }
 
@@ -55,14 +69,26 @@ body {
 
 body, a, h1, h2, h3, h4, h5, h6, ul, li {
 	font-family: 'Raleway', sans-serif;
-	line-height: 20px;
+	line-height: 24px;
 	color: @text;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
 a {
+	line-height: 24px;
+	text-decoration: none;
 	color: @link;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+a:hover {
+	-webkit-text-shadow: 0px 0px 8px lighten(@link, 10%);
+	-moz-text-shadow: 0px 0px 8px lighten(@link, 10%);
+	text-shadow: 0px 0px 8px lighten(@link, 10%);
 }
 
 /* Background image. */
@@ -80,16 +106,53 @@ a {
 }
 
 nav {
-	/* TODO */
-	text-align: center;
-	margin: 0px;
+	min-width: @content-width;
 	height: 48px;
+	text-align: center;
+
+	margin: 0;
+	margin-bottom: 112px;
+	padding: 16px;
+	padding-top: 4px;
+
 	background: @content-color;
 	border-bottom: 1px solid @fg;
 
-	a {
+	.logo-title {
+		padding: 2px;
+		line-height: 32px;
+		color: @text;
+		font-size: 28px;
 		margin: 0px auto;
 		height: auto;
+		letter-spacing: 2px;
+		-webkit-transition: all .25s ease-in-out;
+		-moz-transition: all .25s ease-in-out;
+		-o-transition: all .25s ease-in-out;
+		transition: all .25s ease-in-out;
+	}
+
+	.logo-title:hover {
+		letter-spacing: 8px;
+	}
+
+	.nav-icon {
+		width: 128px;
+		height: 128px;
+		padding: 16px;
+		padding-top: 8px;
+	}
+
+	.logo {
+		width: 128px;
+		border-radius: 64px;
+		transition: box-shadow 0.5s;
+	}
+
+	.logo:hover {
+		-webkit-box-shadow: 0px 0px 4px 0px @link;
+		-moz-box-shadow: 0px 0px 4px 0px @link;
+		box-shadow: 0px 0px 4px 0px @link;
 	}
 }
 
@@ -103,27 +166,48 @@ nav {
 
 .profile {
 	width: 96px;
+	padding: 4px;
+	margin-left: 4px;
+	margin-right: 4px;
+
 	border-radius: 64px;
 	border: 1px solid;
 	border-color: @bg;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+
+.profile:hover {
+	padding: 2px;
+	width: 100px;
+	-webkit-box-shadow: 0px 0px 4px 0px @link;
+	-moz-box-shadow: 0px 0px 4px 0px @link;
+	box-shadow: 0px 0px 4px 0px @link;
 }
 
 /* Index area presentation class */
 
 .landing {
-	/* TODO */
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 16px;
+	text-align: center;
+
+	h1 {
+		font-size: 38px;
+		letter-spacing: 8px;
+	}
 }
 
-/* Member images */
-
-.members {
-	/* TODO */
-}
+/* Content divider */
 
 .line {
 	line-height: 0px;
-	margin-top: 8px;
-	margin-bottom: 8px;
+	margin-top: 16px;
+	margin-bottom: 16px;
 	margin-left: auto;
 	margin-right: auto;
 	width: @content-width - 72px;
@@ -131,11 +215,24 @@ nav {
 	background: @fg;
 }
 
+/* Back to top link. */
+
+.toplink {
+	text-align: center;
+
+	a {
+		font-size: 20px;
+		text-decoration: none;
+	}
+}
+
 .content {
 	.shadow;
 
 	width: @content-width;
 	background-color: @content-color;
+
+	overflow-x: hidden;
 	text-align: justify;
 
 	margin: 16px 16px auto auto;
@@ -148,8 +245,8 @@ nav {
 	border-color: @bg;
 
 	p, a, i, b, strong, em {
-		font-size: 14px;
-		line-height: 20px;
+		font-size: 1em;
+		line-height: 24px;
 	}
 
 	blockquote {
@@ -182,24 +279,15 @@ nav {
 	}
 
 	h3, h4, h5, h6 {
-		font-size: 16px;
+		font-size: 1em;
 	}
 
 	img {
 		border-radius: 4px;
 	}
 
-	/* Back to top link. */
-
 	.toplink {
-		text-align: center;
-		padding: 8px;
-		padding-top: 14px;
-
-		a {
-			font-size: 20px;
-			text-decoration: none;
-		}
+		.toplink;
 	}
 }
 
@@ -212,6 +300,41 @@ nav {
 	}
 }
 
+.container {
+	&:extend(.content);
+
+	p, a, i, b, strong, em {
+		font-size: 1em;
+		line-height: 24px;
+	}
+
+	h1 {
+		font-size: 28px;
+	}
+
+	h2 {
+		font-size: 22px;
+	}
+
+	h3, h4, h5, h6 {
+		font-size: 1em;
+	}
+
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+    	display: inline-block;
+	}
+
+	.toplink {
+		.toplink;
+	}
+}
+
 header {
 	&:extend(.content);
 
@@ -220,7 +343,7 @@ header {
 
 	h1 {
 		font-size: 36px;
-		line-height: 2px;
+		line-height: 24px;
 		text-transform: uppercase;
 	}
 
@@ -236,12 +359,19 @@ header {
 footer {
 	&:extend(.content);
 	text-align: center;
-	height: 64px;
 	padding-top: 8px;
+	margin-bottom: 16px;
 
 	p, a, i, b {
 		font-size: 14px;
 		line-height: 16px;
+	}
+}
+
+/* TODO Handle smaller viewports. */
+@media all and (max-width: 640px) {
+	content {
+		width: 640px;
 	}
 }
 
@@ -253,6 +383,7 @@ pre {
     border-radius: 4px;
     padding: 8px;
     color: white;
+	overflow-x: auto;
 }
 
 p > code, li > code {
@@ -309,4 +440,30 @@ p > code, li > code {
 	.m, .mi, .mf, .mh {
 		color: #9D8FF2;
 	}
+}
+
+/* Custom scrollbar */
+
+::-webkit-scrollbar {
+	width: 8px;
+	border-left: 1px @bg;
+	background: #0c0c0c;
+}
+
+::-webkit-scrollbar-thumb {
+	background: @fg;
+	-webkit-border-radius: 1ex;
+	-webkit-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: @link;
+}
+
+::-webkit-scrollbar-corner {
+	background: #000;
+}
+
+#viewercontent::-webkit-scrollbar {
+	width: 16px;
 }

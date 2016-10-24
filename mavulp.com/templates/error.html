@@ -8,6 +8,7 @@
 	<meta name="keywords" content="mavulp, development, programming">
 	<meta name="author" content="$author">
 	<meta itemprop="image" content="$root/img/metaicon.png">
+	<meta name="viewport" content="width=800, initial-scale=0.5">
 
 	<title>Mavulp - $title</title>
 
@@ -35,10 +36,12 @@
 <body>
 	<div class="background blur noselect"></div>
 	<nav id="top">
-		<!--Navigation bar here with the logo and name on the left and page title on the right.-->
-		<a class="nav-icon">ICON GOES HERE</a>
+		<!--Navigation bar with the logo and name in the center.-->
+		<a class="nav-icon" href="$root">
+			<img class="logo shadow" alt="Mavulp" title="Mavulp" src="$root/img/logo.png"></img>
+		</a>
 		<br>
-		<a href="$root">MAVULP</a>
+		<a class="logo-title" href="$root">MAVULP</a>
 	</nav>
 	<div class="error">
 		<!--Input file content goes here. Keep in mind that the input file is already loaded meaning the frontmatter adjusted variables are already set.-->
@@ -46,8 +49,9 @@
 	</div>
 	<footer>
 		<!--A little content section with slight changes in styling from normal content. Contains a set of links and copyright notice.-->
-		<p>- &copy; Mavulp 2016 -</p>
-		<p>Last build on $generate_date</p>
+		<p>&copy; Mavulp 2016</p>
+		<p><a href="$root/pages/terms">Terms &amp; Conditions</a> | <a href="https://github.com/catlinman/mavulp.com">Site source code</a>
+			<p>Last build ($version) on $generate_date</p>
 	</footer>
 </body>
 
