@@ -1,12 +1,12 @@
 
 # Prepare directories, builds and deploy mavulp.com as well as clean up output files.
-mkdir -p /var/www/mavulp.com/private/log && sudo mkdir -p /var/www/mavulp.com/public || { printf "Failed to create required directory structure.\n" ; exit ; }
+mkdir -p /var/www/mavulp.com/private/log && mkdir -p /var/www/mavulp.com/public || { printf "Failed to create required directory structure.\n" ; exit ; }
 printf "Created required directory structure.\n"
 
 printf "Running sitegen...\n"
 
 if sitegen ; then
-	cp -Rf img/ www/img || { printf "Failed copy image files to deployment directory.\n" ; exit; }
+	cp -Rf img/ www/img || { printf "Failed to copy image files to deployment directory.\n" ; exit; }
 	cp -Rf www/* /var/www/mavulp.com/public || { printf "Failed to copy files to the public server directory.\n" ; exit; }
 	printf "Copied built files to the public server directory.\n"
 

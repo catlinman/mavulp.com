@@ -1,23 +1,84 @@
 
-// This file is just a placeholder. Doesn't actually work too well at the moment.
+/* This file is just a placeholder. Doesn't actually work too well at the moment. */
 
 @text: #f5f5f5;
 @link: #3eb4ff;
-
-body, a, h1, h2, h3, h4, h5, h6 {
-  font-family: 'Raleway', sans-serif;
-  color: @text;
-}
+@bg: #121622;
+@fg: #535d6a;
 
 body {
-    background: #1d2129;
-    text-align: center;
+    background: @bg;
+}
+
+body, a, h1, h2, h3, h4, h5, h6 {
+	font-family: 'Raleway', sans-serif;
+	color: @text;
 }
 
 a {
-    color: @link;
+	color: @link;
 }
 
 h1 {
-  font-size: 32px;
+	font-size: 32px;
+}
+
+div .landing {
+
+}
+
+div .members {
+
+}
+
+/* The following style settings are for code formatting */
+
+.highlight {
+	/* builtins */
+	.nb, .cp {
+		color: #F69385;
+	}
+
+	/* strings */
+	.s, .s1, .s2, .se {
+		color: #F1BF8E;
+	}
+
+	/* proper names, self */
+	.nc, .vc, .bp {
+		color: #99CBCA;
+	}
+
+	/* true, false, nil */
+	.kc {
+		color: #B3EFE5;
+	}
+
+	/* function lit, braces, parens  */
+	.nf, .kt, .na {
+		color: #B0D89C;
+	}
+
+	/* operators */
+	.o, .si {
+		color: #F277A1;
+	}
+
+	.nv {
+		color: #F277A1;
+	}
+
+	/* keywords */
+	.k, .kd, .nt {
+		color: #BB84B4;
+	}
+
+	.c1, .c2, .c {
+		color: #929292;
+	}
+
+	// numbers
+	.m, .mi, .mf, .mh {
+		color: #9D8FF2;
+	}
 }
