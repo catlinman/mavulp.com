@@ -10,7 +10,8 @@ coffeescript = tools.system_command "coffee -c -s < %s > %s", "js"
 
 sitegen.create =>
   -- Create directories to keep deployed files more organized.
-  os.execute "rm -dRf www && mkdir -p www www/css www/js"
+  os.execute "rm -dRf www && mkdir -p www www/css www/js www/img"
+  os.execute "cp -Rf img/* www/img"
 
   -- Build stylesheets and scripts.
   build lessc, "less/style.less", "css/style.css"
@@ -27,7 +28,7 @@ sitegen.create =>
 
   -- Define variables for pages and templates here. Some of these should be
   -- overwritten using the templating functions within input files.
-  @version = "0.3"
+  @version = "0.6"
 
   -- Page title variable. Extends "Mavulp" on pages that are not index.
   @title = "Mavulp"
@@ -36,5 +37,5 @@ sitegen.create =>
   @url = "https://mavulp.com"
 
   -- Variables for pages and input files. Should be overwritten in most cases.
-  @author = "Mavulp Development Team"
+  @author = "mavulp" -- Should be lowercase.
   @description = "Mavulp is an international development team building websites and applications."

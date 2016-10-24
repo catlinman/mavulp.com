@@ -1,8 +1,10 @@
 {
-  title: "Test page"
+  title: "Formatting Test Page"
   description: "This page is intended to test features of the Mavulp website"
-  author: "Catlinman"
+  author: "catlinman"
 }
+
+# Table of contents #
 
 $index
 
@@ -24,7 +26,7 @@ You can use any formatting that you would usually use in markdown files. The fol
 
 Inline images are also supported as the following formatting shows.
 
-![Mavulp Logo](https://mavulp.com/img/icon.png)
+![Catlinman](../img/profiles/mavulp.jpg)
 
 If you want to give emphasis to a statement or comment you can use quote formatting to do so.
 
@@ -41,12 +43,10 @@ First option (best used inline):
 
 Second option (for multiple lines):
 
-```
-body, a, h1, h2, h3, h4, h5, h6 {
-  font-family: 'Raleway', sans-serif;
-  color: @text;
-}
-```
+	body, a, h1, h2, h3, h4, h5, h6 {
+  		font-family: 'Raleway', sans-serif;
+  		color: @text;
+	}
 
 We encourage use of the second possibility for multiple lines of code. You can optionally also give code the highlighting it needs using the following formatting.
 

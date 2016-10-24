@@ -2,36 +2,264 @@
 /* This file is just a placeholder. Doesn't actually work too well at the moment. */
 
 @text: #f5f5f5;
+@quote-text: #bababa;
 @link: #3eb4ff;
 @bg: #121622;
-@fg: #535d6a;
+@fg: #2a3f59;
 
-body {
-    background: @bg;
+@content-color: #1a1f30;
+@content-width: 800px;
+
+/* Helper class. Blurs an image. */
+
+.blur {
+	filter: blur(5px);
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
 }
 
-body, a, h1, h2, h3, h4, h5, h6 {
+/* Helper class. Casts a shadow. */
+
+.shadow {
+	-webkit-box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, .25);
+	-moz-box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, .25);
+	box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, .25);
+}
+
+/* Helper class. Disables selecting of content. */
+
+.noselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: default;
+}
+
+/* Main site stylesheet starts here. */
+
+body {
+    background-color: @bg;
+	margin: 0;
+	line-height: 0;
+	overflow-y: auto;
+
+	br {
+		margin: 4px 4px;
+	}
+}
+
+body, a, h1, h2, h3, h4, h5, h6, ul, li {
 	font-family: 'Raleway', sans-serif;
+	line-height: 20px;
 	color: @text;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 a {
 	color: @link;
 }
 
-h1 {
-	font-size: 32px;
+/* Background image. */
+
+.background {
+	z-index: -1;
+	position: fixed;
+	background-image: url(../img/background.jpg);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
 }
 
-div .landing {
+nav {
+	/* TODO */
+	text-align: center;
+	margin: 0px;
+	height: 48px;
+	background: @content-color;
+	border-bottom: 1px solid @fg;
 
+	a {
+		margin: 0px auto;
+		height: auto;
+	}
 }
 
-div .members {
+/* Upcase conversation for the author field. */
 
+.author {
+	text-transform: capitalize;
+}
+
+/* Profile image class */
+
+.profile {
+	width: 96px;
+	border-radius: 64px;
+	border: 1px solid;
+	border-color: @bg;
+}
+
+/* Index area presentation class */
+
+.landing {
+	/* TODO */
+}
+
+/* Member images */
+
+.members {
+	/* TODO */
+}
+
+.line {
+	line-height: 0px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	margin-left: auto;
+	margin-right: auto;
+	width: @content-width - 72px;
+	height: 1px;
+	background: @fg;
+}
+
+.content {
+	.shadow;
+
+	width: @content-width;
+	background-color: @content-color;
+	text-align: justify;
+
+	margin: 16px 16px auto auto;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 16px;
+
+	border: 1px solid;
+	border-radius: 4px;
+	border-color: @bg;
+
+	p, a, i, b, strong, em {
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+	blockquote {
+		border-left: 4px solid @quote-text;
+		margin: 1.5em 10px;
+		padding: 0.5em 10px;
+		quotes: "\201C""\201D""\2018""\2019";
+	}
+
+	blockquote:before {
+		color: @quote-text;
+		content: open-quote;
+		font-size: 4em;
+		line-height: 0.1em;
+		margin-right: 0.25em;
+		vertical-align: -0.4em;
+	}
+
+	blockquote p {
+		color: @quote-text;
+		display: inline;
+	}
+
+	h1 {
+		font-size: 28px;
+	}
+
+	h2 {
+		font-size: 22px;
+	}
+
+	h3, h4, h5, h6 {
+		font-size: 16px;
+	}
+
+	img {
+		border-radius: 4px;
+	}
+
+	/* Back to top link. */
+
+	.toplink {
+		text-align: center;
+		padding: 8px;
+		padding-top: 14px;
+
+		a {
+			font-size: 20px;
+			text-decoration: none;
+		}
+	}
+}
+
+.error {
+	&:extend(.content);
+	text-align: center;
+
+	h1 {
+		font-size: 36px
+	}
+}
+
+header {
+	&:extend(.content);
+
+	text-align: center;
+	line-height: 8px;
+
+	h1 {
+		font-size: 36px;
+		line-height: 2px;
+		text-transform: uppercase;
+	}
+
+	h2 {
+		font-size: 18px;
+	}
+
+	p {
+		font-size: 14px;
+	}
+}
+
+footer {
+	&:extend(.content);
+	text-align: center;
+	height: 64px;
+	padding-top: 8px;
+
+	p, a, i, b {
+		font-size: 14px;
+		line-height: 16px;
+	}
 }
 
 /* The following style settings are for code formatting */
+
+pre {
+    background: rgba(0, 0, 0, 0.25);
+	line-height: 16px;
+    border-radius: 4px;
+    padding: 8px;
+    color: white;
+}
+
+p > code, li > code {
+    background: @bg;
+    border-radius: 4px;
+    padding: 2px 4px;
+}
 
 .highlight {
 	/* builtins */
