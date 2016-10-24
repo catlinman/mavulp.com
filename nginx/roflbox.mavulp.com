@@ -24,11 +24,23 @@ server {
 
 	index index.html index.htm;
 
-	error_page 403 /403.html;
-	error_page 404 /404.html;
-	error_page 500 502 503 504 /500.html;
+	error_page 403 = @fbredir;
+	error_page 404 = @nfredir;
+	error_page 500 502 503 504 = @ngredir;
 
 	location / {
 		try_files $uri $uri/ $uri.html =404;
+	}
+
+	location @fbredir {
+		rewrite  .*  /403 permanent;
+	}
+
+	location @nfredir {
+		rewrite  .*  /404 permanent;
+	}
+
+	location @ngredir {
+		rewrite  .*  /500 permanent;
 	}
 }
