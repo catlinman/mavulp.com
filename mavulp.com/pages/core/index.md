@@ -1,5 +1,16 @@
 {
-	-- This needs input data. Preferably arrays for members and available pages.
+	-- TODO: This system requires expansion. $each is not enough.
+	projects:
+	{
+		"https://hivecom.net"
+		"https://roflbox.mavulp.com"
+	}
+
+	members:
+	{
+		"catlinman"
+		"jokler"
+	}
 }
 
 # About us #

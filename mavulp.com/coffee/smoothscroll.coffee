@@ -1,11 +1,11 @@
+# smoothscroll script for easy navigation inside the page.
 $ ->
-	$('a[href^="#"]').on 'click.smoothscroll', (e) ->
+	$('a[href^="\\#"]').on 'click.smoothscroll', (e) ->
 		e.preventDefault()
 
-		target = @hash
-		$target = $(target)
+		$target = $(document.getElementById(@hash.substr(1)))
 
 		$('html, body').stop().animate {
 			'scrollTop': $target.offset().top
 			}, 500, 'swing', ->
-				window.location.hash = target
+				window.location.hash = @hash

@@ -13,7 +13,7 @@
 /* Helper class. Centers content and containers. Used mainly on the index page */
 
 .centered {
-	text-align: center !important; 
+	text-align: center !important;
 	text-align-last: center !important;
 	-moz-text-align-last: center !important;
 }
@@ -216,6 +216,18 @@ nav {
 	background: @fg;
 }
 
+.vertical-line {
+	display: inline-block;
+	line-height: 0px;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 32px;
+	margin-right: 32px;
+	width: 1px;
+	height: 300px;
+	background: @fg;
+}
+
 /* Back to top link. */
 
 .toplink {
@@ -322,13 +334,30 @@ nav {
 	}
 
 	ul {
+		vertical-align: middle;
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
+
+		li {
+			vertical-align: top;
+			text-align: center;
+			display: inline-block;
+
+			.vertical-line {
+				vertical-align: middle;
+			}
+		}
 	}
 
-	li {
-    	display: inline-block;
+	ol {
+		padding: 0;
+		list-style-type: none;
+
+		li {
+			text-align: left;
+			display: list-item;
+		}
 	}
 
 	.toplink {
@@ -372,7 +401,7 @@ footer {
 /* TODO Handle smaller viewports. */
 @media all and (max-width: 640px) {
 	content {
-		width: 640px;
+		
 	}
 }
 
