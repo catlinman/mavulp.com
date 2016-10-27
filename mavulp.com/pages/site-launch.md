@@ -1,8 +1,10 @@
 {
-  title: "Site Launch"
-  description: "We finally have an official website for Mavulp and its projects!"
-  author: "catlinman"
-  website: "https://twitter.com/catplease"
+	title: "Site Launch"
+	description: "We finally have an official website for Mavulp and its projects!"
+
+	members: {
+	  {id: "catlinman", name: "Catlinman", website: "https://twitter.catlinman.com"}
+	}
 }
 
 # So, why the website? #

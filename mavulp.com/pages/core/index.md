@@ -1,5 +1,4 @@
 {
-	-- TODO: This system requires expansion. $each is not enough.
 	projects:
 	{
 		"https://hivecom.net"
@@ -8,8 +7,8 @@
 
 	members:
 	{
-		"catlinman"
-		"jokler"
+		{id: "catlinman", name: "Catlinman", website: "https://twitter.catlinman.com", role: "Managing Lead Developer"}
+		{id: "jokler", name: "Jokler", website: "https://twitter.com/jokler", role: "Lead Developer"}
 	}
 }
 

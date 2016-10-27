@@ -36,6 +36,12 @@
 	box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, .25);
 }
 
+.text-shadow {
+	-webkit-text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.75);
+	-moz-text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.75);
+	text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.75);
+}
+
 /* Helper class. Disables selecting of content. */
 
 .noselect {
@@ -106,18 +112,46 @@ a:hover {
 	height: 100%;
 }
 
+.background-details {
+	.background;
+	background-image: url(../img/background-details.png);
+}
+
 nav {
 	min-width: @content-width;
 	height: 48px;
 	text-align: center;
 
 	margin: 0;
-	margin-bottom: 112px;
+	margin-bottom: 148px;
 	padding: 16px;
 	padding-top: 4px;
 
 	background: @content-color;
 	border-bottom: 1px solid @fg;
+
+	.logo {
+		content: "";
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: -20px;
+		padding: 16px;
+		padding-top: 8px;
+		width: 140px;
+		height: 140px;
+		background-image: url(../img/metaicon.png);
+		background-position: center;
+		background-size: 140px;
+		background-repeat: no-repeat;
+		border-radius: 128px;
+		transition: box-shadow 0.5s;
+	}
+
+	.logo:hover {
+		-webkit-box-shadow: 0px 0px 4px 0px @link;
+		-moz-box-shadow: 0px 0px 4px 0px @link;
+		box-shadow: 0px 0px 4px 0px @link;
+	}
 
 	.logo-title {
 		padding: 2px;
@@ -136,53 +170,45 @@ nav {
 	.logo-title:hover {
 		letter-spacing: 8px;
 	}
-
-	.nav-icon {
-		width: 128px;
-		height: 128px;
-		padding: 16px;
-		padding-top: 8px;
-	}
-
-	.logo {
-		width: 128px;
-		border-radius: 64px;
-		transition: box-shadow 0.5s;
-	}
-
-	.logo:hover {
-		-webkit-box-shadow: 0px 0px 4px 0px @link;
-		-moz-box-shadow: 0px 0px 4px 0px @link;
-		box-shadow: 0px 0px 4px 0px @link;
-	}
-}
-
-/* Upcase conversation for the author field. */
-
-.author {
-	text-transform: capitalize;
 }
 
 /* Profile image class */
 
 .profile {
-	width: 96px;
+	width: 110px;
 	padding: 4px;
-	margin-left: 4px;
-	margin-right: 4px;
+	margin-left: auto;
+	margin-right: auto;
+	display: inline-table;
 
+	a {
+		font-size: 14px !important;
+	}
+
+	p {
+		line-height: 1.5em !important;
+		font-size: 12px !important;
+		margin-top: 4px !important;
+		margin-bottom: 4px !important;
+	}
+}
+
+.profile-image {
+	width: 86px;
+	padding: 4px;
 	border-radius: 64px;
 	border: 1px solid;
 	border-color: @bg;
-	-webkit-transition: all .5s ease-in-out;
-	-moz-transition: all .5s ease-in-out;
-	-o-transition: all .5s ease-in-out;
-	transition: all .5s ease-in-out;
+
+	-webkit-transition: all .25s ease-in-out;
+	-moz-transition: all .25s ease-in-out;
+	-o-transition: all .25s ease-in-out;
+	transition: all .25s ease-in-out;
 }
 
-.profile:hover {
+.profile-image:hover {
 	padding: 2px;
-	width: 100px;
+	width: 90px;
 	-webkit-box-shadow: 0px 0px 4px 0px @link;
 	-moz-box-shadow: 0px 0px 4px 0px @link;
 	box-shadow: 0px 0px 4px 0px @link;
@@ -200,6 +226,15 @@ nav {
 	h1 {
 		font-size: 38px;
 		letter-spacing: 8px;
+	}
+
+	.logo {
+		content: "";
+		margin-left: auto;
+		margin-right: auto;
+		width: 256px;
+		height: 256px;
+		background-image: url(../img/metaicon.png);
 	}
 }
 
@@ -381,8 +416,21 @@ header {
 		font-size: 18px;
 	}
 
-	p {
+	p, a {
 		font-size: 14px;
+	}
+
+	.profile {
+		width: 78px !important;
+	}
+
+	.profile-image {
+		padding: 2px;
+		width: 64px !important;
+	}
+
+	.profile-image:hover {
+		padding: 2px;
 	}
 }
 
@@ -401,7 +449,7 @@ footer {
 /* TODO Handle smaller viewports. */
 @media all and (max-width: 640px) {
 	content {
-		
+
 	}
 }
 

@@ -5,9 +5,10 @@ $render{"templates/snippets/head"}
 
 <body>
 	<div class="background blur noselect"></div>
+	<div class="background-details noselect"></div>
 	<!-- We do not need a navigation bar on the landing page.-->
 	<div class="landing noselect" id="top">
-		<img class="noselect" src="/img/metaicon.png"></img>
+		<div class="logo noselect"></div>
 		<h1 class="noselect">MAVULP</h1>
 	</div>
 	<div class="content centered">
@@ -20,9 +21,9 @@ $render{"templates/snippets/head"}
 				<h1>Pages</h1>
 				<p>The following pages belong to mavulp.com and contain content written by members</p>
 				<ol>
-					$each{pages, "page"}[[
+					$if{"pages"}[[ $each{pages, "page"}[[
 					<li><a href="/pages/$page">$page</a></li>
-					]]
+					]] ]]
 				</ol>
 			</li>
 			<li>
@@ -32,7 +33,7 @@ $render{"templates/snippets/head"}
 				<h1>External Pages</h1>
 				<p>Team projects and pages hosted standalone or as subdomains of mavulp.com</p>
 				<ol>
-					$if{"members"}[[ $each{projects, "page"}[[
+					$if{"projects"}[[ $each{projects, "page"}[[
 					<li><a href="$page">$page</a></li>
 					]] ]]
 				</ol>
@@ -40,11 +41,21 @@ $render{"templates/snippets/head"}
 		</ul>
 	</div>
 	<div class="container centered">
-		<h1>Members</h1> $if{"members"}[[ $each{members, "member"}[[
-		<a>
-			<img class="profile shadow" alt="$member" title="$member" src="$root/img/profiles/$member.jpg"></img>
-		</a>
+		<h1>Members</h1> $if{"members"}[[ $members[[
+		<div class="profile">
+			<a href="$website">
+				<img class="profile-image shadow" alt="$name" title="$name" src="$root/img/profiles/$id.jpg"></img>
+			</a>
+			<a href="$website">$name</a>
+			<p>$role</p>
+		</div>
 		]] ]]
+	</div>
+	<div class="content centered">
+		<h1>Contact</h1>
+		<p>Mavulp is always open to new ideas, projects and members. If you would like to get in contact with us, you can send us an email at the following address.</p>
+		<a href="mailto:contact@mavulp.com">$email</a>
+		<p>You can also direct any questions and matters concerning the site and group to that address.</p>
 	</div>
 	<div class="container centered">
 		<h1>Twitter feeds</h1>

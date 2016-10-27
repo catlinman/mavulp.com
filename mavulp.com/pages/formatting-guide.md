@@ -1,8 +1,10 @@
 {
-  title: "Formatting Test Page"
-  description: "This page is intended to test features of the Mavulp website"
-  author: "catlinman"
-  website: "https://twitter.com/catplease"
+	title: "Formatting Guide"
+	description: "Page with the setup of testing the Mavulp website content features."
+
+	members: {
+		{id: "catlinman", name: "Catlinman", website: "https://twitter.catlinman.com"}
+	}
 }
 
 # Table of contents #

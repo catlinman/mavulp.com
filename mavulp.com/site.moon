@@ -34,15 +34,17 @@ sitegen.create =>
 			add "pages/" ..page, template: "page"
 
 	-- Define variables for pages and templates here. Some of these should be
-	-- overwritten using the templating functions within input files.
-	@version = "0.9"
+	-- overwritten using the template functions within input files.
+	@version = "0.98"
+
+	-- Get the current year. Used in the footer of all pages.
+	@year = os.date("%Y")
 
 	-- Base URL used throughout the page for navigation as well as meta tagging.
 	@url = "https://mavulp.com"
+	@email = "contact@mavulp.com"
 
 	-- Variables for pages and input files. Should be overwritten in most cases.
-
 	@title -- Page title variable. Extends "Mavulp" on pages that are not index.
 	@description = "Mavulp is an international development team building websites and applications."
-	@author = "mavulp" -- Page author. Should be lowercase.
 	@website = "https://mavulp.com" -- Author's website.

@@ -5,16 +5,22 @@ $render{"templates/snippets/head"}
 
 <body>
 	<div class="background blur noselect"></div>
+	<div class="background-details noselect"></div>
 	$render{"templates/snippets/nav"}
 	<header>
 		<!--This section contains information that is to be highlighted.-->
-		<h1>$title</h1>
+		<h1 class="text-shadow">$title</h1>
 		<div class="line"></div>
 		<h2>$description</h2>
-		<p>Content by <span class="author">$author</span></p>
-		<a href="$website">
-			<img class="profile shadow" alt="$author" title="$author" src="/img/profiles/$author.jpg"></img>
-		</a>
+		<p>Content written by</p>
+		$if{"members"}[[ $members[[
+		<div class="profile">
+			<a href="$website">
+				<img class="profile-image shadow" alt="$name" title="$name" src="$root/img/profiles/$id.jpg"></img>
+			</a>
+			<a href="$website">$name</a>
+		</div>
+		]] ]]
 	</header>
 	<div class="content">
 		<!--Input file content goes here. Keep in mind that the input file is already loaded meaning the frontmatter adjusted variables are already set.-->
