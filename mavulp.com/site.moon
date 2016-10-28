@@ -35,7 +35,7 @@ sitegen.create =>
 
 	-- Define variables for pages and templates here. Some of these should be
 	-- overwritten using the template functions within input files.
-	@version = "0.98"
+	@version = "0.99"
 
 	-- Get the current year. Used in the footer of all pages.
 	@year = os.date("%Y")

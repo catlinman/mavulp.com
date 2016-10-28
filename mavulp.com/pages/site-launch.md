@@ -15,13 +15,12 @@ The way the site works is that there are a set of pages that are written by myse
 
 If you want to look into the possibilities that can be thrown into posts and content here then I suggest checking out the formatting [guide page]($root/pages/formatting-guide) for more information. You can also find the source code for the entire page in the [Mavulp.com GitHub Repository](https://github.com/catlinman/mavulp.com).
 
+One big point as with most websites that I personally write is to keep them rather lightweight. This always strongly depends on the system as to the degree that this is done but it is of course good practice to just keep file sizes small in general and cache images and such wherever possible. Since this site as of writing this post runs a Raspberry Pi in a local network with a limited upload speed I had to make sure to keep things optimized without degrading the visual quality of the page. This meant cutting a few corners here and there and relying on newer CSS filtering for some elements but in general the page should display rather well on a large range of devices and settings.
+
 If you are wondering: the site depends on [Sitegen](https://github.com/leafo/sitegen/) which is required to build the pages. Additionally [Less.js](http://lesscss.org/), [CoffeeScript](http://coffeescript.org/) and [Pygments](http://pygments.org/) are used in development. Pretty neat!
 
-*Now, what's left to do?*
+The site is done in my opinion in terms that it is ready to be used. That's what really matters at this point. We might expand a feature or two later on when it is needed but for now the page is functional and ready to go!
 
-- Mobile layout improvements
-- Better handling of member and link entries
-- Having multiple content authors at once
-- Maybe some extra styling for the landing page
+That's it from me for now! Hope you keep an eye on Mavulp and it's projects! We're excited to see where we will take things!
 
-The site is done in my opinion in terms that it is ready to be used. That's what really matters at this point. I'll probably have those few points done by the end of next week if everything goes alright anyway so there's barely a reason for me to list them now!
+*I'll see you on the internet!*

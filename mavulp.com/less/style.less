@@ -61,11 +61,19 @@
 	cursor: default;
 }
 
+/* Scrollable container that wraps overflow and show a bar at all times */
+
+.scroll {
+	overflow: hidden;
+	overflow-y: auto;
+}
+
 /* Main site stylesheet starts here. */
 
 body {
     background-color: @bg;
 	margin: 0;
+	margin-top: -16px;
 	line-height: 0;
 	overflow-y: auto;
 
@@ -125,7 +133,6 @@ nav {
 	margin: 0;
 	margin-bottom: 148px;
 	padding: 16px;
-	padding-top: 4px;
 
 	background: @content-color;
 	border-bottom: 1px solid @fg;
@@ -217,14 +224,15 @@ nav {
 /* Index area presentation class */
 
 .landing {
-	width: 800px;
+	width: 830px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 16px;
+	padding-top: 16px;
 	text-align: center;
 
 	h1 {
-		font-size: 38px;
+		font-size: 42px;
 		letter-spacing: 8px;
 	}
 
@@ -240,7 +248,8 @@ nav {
 
 /* Content divider */
 
-.line {
+hr, .line {
+	border-style: none;
 	line-height: 0px;
 	margin-top: 16px;
 	margin-bottom: 16px;
@@ -446,13 +455,6 @@ footer {
 	}
 }
 
-/* TODO Handle smaller viewports. */
-@media all and (max-width: 640px) {
-	content {
-
-	}
-}
-
 /* The following style settings are for code formatting */
 
 pre {
@@ -524,8 +526,9 @@ p > code, li > code {
 
 ::-webkit-scrollbar {
 	width: 8px;
+	-webkit-border-radius: 1ex;
 	border-left: 1px @bg;
-	background: #0c0c0c;
+	background: @bg;
 }
 
 ::-webkit-scrollbar-thumb {

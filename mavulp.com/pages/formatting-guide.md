@@ -36,6 +36,10 @@ If you want to give emphasis to a statement or comment you can use quote formatt
 > Quotes are also something that might come in handy when writing content.
 > > This quote is nested. Pretty neat.
 
+If you want to insert a horizontal divider you can do so with the following formatting.
+
+____
+
 ## Code formatting ##
 
 Code formatting is also supported. There are two ways to do it.

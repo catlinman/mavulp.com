@@ -9,7 +9,15 @@ $render{"templates/snippets/head"}
 	<!-- We do not need a navigation bar on the landing page.-->
 	<div class="landing noselect" id="top">
 		<div class="logo noselect"></div>
-		<h1 class="noselect">MAVULP</h1>
+		<h1 class="text-shadow noselect">MAVULP</h1>
+	</div>
+	<div class="content centered">
+		<h1>NEWS &amp; ANNOUNCEMENTS</h1> $if{"news"}[[
+		<hr>
+		<h1>$news|1|title</h1>
+		<p>$news|1|content</p>
+		<p>Published $news|1|date</p>
+		]]
 	</div>
 	<div class="content centered">
 		<!--Input file content goes here. Keep in mind that the input file is already loaded meaning the frontmatter adjusted variables are already set.-->
@@ -18,30 +26,37 @@ $render{"templates/snippets/head"}
 	<div class="container centered">
 		<ul>
 			<li style="width: 350px">
-				<h1>Pages</h1>
+				<h1>PAGES</h1>
 				<p>The following pages belong to mavulp.com and contain content written by members</p>
-				<ol>
-					$if{"pages"}[[ $each{pages, "page"}[[
-					<li><a href="/pages/$page">$page</a></li>
-					]] ]]
-				</ol>
+				<div class="scroll" style="height:134px">
+					<ol>
+						$if{"pages"}[[ $each{pages, "page"}[[
+						<li><a href="/pages/$page">$page</a></li>
+						]] ]]
+					</ol>
+				</div>
 			</li>
 			<li>
-				<div class="vertical-line" style="height: 220px;"></div>
+				<div class="vertical-line" style="height: 280px;"></div>
 			</li>
 			<li style="width: 350px">
-				<h1>External Pages</h1>
+				<h1>PROJECTS</h1>
 				<p>Team projects and pages hosted standalone or as subdomains of mavulp.com</p>
-				<ol>
-					$if{"projects"}[[ $each{projects, "page"}[[
-					<li><a href="$page">$page</a></li>
-					]] ]]
-				</ol>
+				<div class="scroll" style="height:134px">
+					<ol>
+						$if{"projects"}[[ $each{projects, "page"}[[
+						<li><a href="$page">$page</a></li>
+						]] ]]
+					</ol>
+				</div>
 			</li>
 		</ul>
 	</div>
 	<div class="container centered">
-		<h1>Members</h1> $if{"members"}[[ $members[[
+		<h1>MEMBERS</h1>
+		<hr>
+		<p>Mavulp members and their roles in the group.</p>
+		$if{"members"}[[ $members[[
 		<div class="profile">
 			<a href="$website">
 				<img class="profile-image shadow" alt="$name" title="$name" src="$root/img/profiles/$id.jpg"></img>
@@ -52,13 +67,15 @@ $render{"templates/snippets/head"}
 		]] ]]
 	</div>
 	<div class="content centered">
-		<h1>Contact</h1>
+		<h1>CONTACT</h1>
+		<hr>
 		<p>Mavulp is always open to new ideas, projects and members. If you would like to get in contact with us, you can send us an email at the following address.</p>
 		<a href="mailto:contact@mavulp.com">$email</a>
 		<p>You can also direct any questions and matters concerning the site and group to that address.</p>
 	</div>
 	<div class="container centered">
-		<h1>Twitter feeds</h1>
+		<h1>TWITTER FEEDS</h1>
+		<hr>
 		<ul>
 			<li>
 				<a class="twitter-timeline" data-lang="en" data-width="350" data-height="600" data-theme="dark" data-chrome="noscrollbar noheader nofooter noborders transparent" href="https://twitter.com/mavulp">Mavulp Announcements</a>
@@ -72,14 +89,8 @@ $render{"templates/snippets/head"}
 				<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 			</li>
 		</ul>
-		<div class="line"></div>
+		<hr>
 		<div class="toplink"><a href="#top">Back to top</a></div>
 	</div>
 	$render{"templates/snippets/footer"}
 </body>
-
-</html>
-</footer>
-</body>
-
-</html>
