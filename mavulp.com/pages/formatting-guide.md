@@ -1,6 +1,6 @@
 {
 	title: "Formatting Guide"
-	description: "Page with the setup of testing the Mavulp website content features."
+	description: "Page with the setup of testing the Mavulp website content features"
 
 	members: {
 		{id: "catlinman", name: "Catlinman", website: "https://twitter.catlinman.com"}

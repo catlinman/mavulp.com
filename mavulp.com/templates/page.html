@@ -11,9 +11,8 @@ $render{"templates/snippets/head"}
 		<!--This section contains information that is to be highlighted.-->
 		<h1 class="text-shadow">$title</h1>
 		<div class="line"></div>
-		<h2>$description</h2>
+		<h2>$description</h2> $if{"members"}[[ $members[[
 		<p>Content written by</p>
-		$if{"members"}[[ $members[[
 		<div class="profile">
 			<a href="$website">
 				<img class="profile-image shadow" alt="$name" title="$name" src="$root/img/profiles/$id.jpg"></img>

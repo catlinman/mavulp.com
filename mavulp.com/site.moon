@@ -15,6 +15,9 @@ sitegen.create =>
 	os.execute "rm -dRf www && mkdir -p www www/css www/js www/img"
 	os.execute "cp -Rf img/* www/img"
 
+	-- Copy the robots.text file.
+	os.execute "cp robots.txt www"
+
 	-- Build stylesheets and scripts.
 	build lessc, "less/style.less", "css/style.css"
 	build coffeescript, "coffee/main.coffee", "js/main.js"
@@ -33,9 +36,14 @@ sitegen.create =>
 			table.insert @pages, string.sub(page, 0, -4)
 			add "pages/" ..page, template: "page"
 
+	-- Generate hidden pages without adding them to the page table.
+	for page in lfs.dir lfs.currentdir() .. "/pages/hidden/"
+		if string.find page, ".md"
+			add "pages/hidden/" ..page, template: "page", target: "/pages/" ..string.sub(page, 0, -4)
+
 	-- Define variables for pages and templates here. Some of these should be
 	-- overwritten using the template functions within input files.
-	@version = "0.99"
+	@version = "1.0"
 
 	-- Get the current year. Used in the footer of all pages.
 	@year = os.date("%Y")
@@ -46,5 +54,5 @@ sitegen.create =>
 
 	-- Variables for pages and input files. Should be overwritten in most cases.
 	@title -- Page title variable. Extends "Mavulp" on pages that are not index.
-	@description = "Mavulp is an international development team building websites and applications."
+	@description = "Mavulp is an international development team building websites and applications"
 	@website = "https://mavulp.com" -- Author's website.
