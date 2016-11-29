@@ -6,6 +6,9 @@ printf "Created required directory structure.\n"
 printf "Running sitegen...\n"
 
 if sitegen ; then
+	rm -dRf /var/www/mavulp.com/public/* || { printf "Failed to clear the remote directory." ; exit ; }
+	printf "Removed deployment directory contents if any were present.\n"
+
 	cp -Rf www/* /var/www/mavulp.com/public || { printf "Failed to copy files to the public server directory.\n" ; exit; }
 	printf "Copied built files to the public server directory.\n"
 
