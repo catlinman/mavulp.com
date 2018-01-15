@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # Prepare directories, builds and deploy mavulp.com as well as clean up output files.
 mkdir -p /srv/roflbox.mavulp.com/private/log && mkdir -p /srv/roflbox.mavulp.com/public || { printf "Failed to create required directory structure.\n" ; exit ; }
